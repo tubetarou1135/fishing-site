@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中古釣具一発サーチ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>中古釣具一発サーチ</h1>
+</header>
+
+<div class="search-area">
+    <input class="search-box" type="text" placeholder="商品名を検索">
+</div>
+
+<div class="sort-buttons">
+    <button onclick="sortLow()">安い順</button>
+    <button onclick="sortHigh()">高い順</button>
+</div>
+
+<div class="products" id="products"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
