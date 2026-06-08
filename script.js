@@ -1,31 +1,36 @@
 const products = [
-    {
-        name: "シマノ 22ステラ C3000XG",
-        price: 45000
-    },
-    {
-        name: "ダイワ イグジスト LT2500",
-        price: 38000
-    },
-    {
-        name: "シマノ ワールドシャウラ 1702R",
-        price: 32000
-    }
+  {
+    name: "シマノ 22ステラ C3000XG",
+    price: 45000,
+    image: "https://picsum.photos/300/200?1",
+    url: "https://www.google.com/search?q=シマノ+22ステラ+C3000XG"
+  },
+  {
+    name: "ダイワ イグジスト LT2500",
+    price: 38000,
+    image: "https://picsum.photos/300/200?2",
+    url: "https://www.google.com/search?q=ダイワ+イグジスト+LT2500"
+  },
+  {
+    name: "シマノ ワールドシャウラ 1702R",
+    price: 32000,
+    image: "https://picsum.photos/300/200?3",
+    url: "https://www.google.com/search?q=シマノ+ワールドシャウラ+1702R"
+  }
 ];
 
 function displayProducts(list) {
-
     const container = document.getElementById("products");
 
     container.innerHTML = "";
 
     list.forEach(product => {
         container.innerHTML += `
-            <div class="card">
-                <img src="https://picsum.photos/300/200">
+            <a class="card" href="${product.url}" target="_blank">
+                <img src="${product.image}">
                 <h3>${product.name}</h3>
                 <p>${product.price.toLocaleString()}円</p>
-            </div>
+            </a>
         `;
     });
 }
@@ -41,12 +46,12 @@ function searchProducts() {
 }
 
 function sortLow() {
-    products.sort((a,b) => a.price - b.price);
+    products.sort((a, b) => a.price - b.price);
     displayProducts(products);
 }
 
 function sortHigh() {
-    products.sort((a,b) => b.price - a.price);
+    products.sort((a, b) => b.price - a.price);
     displayProducts(products);
 }
 
